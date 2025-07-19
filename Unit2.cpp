@@ -8,6 +8,8 @@
 #include <Fmx.Layouts.hpp>
 #include <System.UITypes.hpp>
 #include <FMX.Controls.hpp>
+#include<cmath>
+
 
 #pragma package(smart_init)
 #pragma resource "*.fmx"
@@ -222,9 +224,35 @@ void __fastcall TForm2::SearchButtonClick(TObject *Sender)
 	ResultBox->Lines->Add(" - Worst Case   : O(log n)");
 	ResultBox->Lines->Add(" - Average Case : O(log n)");
 	ResultBox->Lines->Add(" - Space        : O(n) (due to copy + sort)");
+//---------------------------------------------------------------
+	ResultBox->Lines->Add("Estimated Theoretical Complexity:");
+	ResultBox->Lines->Add("--------------------------");
+
+   int n = DataBox->Items->Count; // total elements
+   ResultBox->Lines->Add("Total Elements (n): " + IntToStr(n));
+   ResultBox->Lines->Add("");
+
+// Linear Search
+ResultBox->Lines->Add("Linear Search:");
+if (linearStepCount == 1) {
+	ResultBox->Lines->Add(" - Time Complexity (Best Case): O(1)");
+} else {
+	ResultBox->Lines->Add(" - Time Complexity (Worst Case): O(n) → O(" + IntToStr(n) + ")");
+}
+ResultBox->Lines->Add(" - Steps Taken: " + IntToStr(linearStepCount));
+ResultBox->Lines->Add(" - Space Complexity: O(1)");
+ResultBox->Lines->Add("");
+
+// Binary Search (on already sorted data)
+ResultBox->Lines->Add("Binary Search (on sorted data):");
+ResultBox->Lines->Add(" - Time Complexity: O(log n) ≈ O(" +
+	FloatToStrF(log2(n), ffFixed, 4, 1) + ")");
+ResultBox->Lines->Add(" - Steps Taken: " + IntToStr(binaryStepCount));
+ResultBox->Lines->Add(" - Space Complexity: O(1)");
 
 
-	//---------------------------------------------------------------
+
+//---------------------------------------------------------------
 
 	// Visual result boxes
 	LinearBoxLayout->Visible = true;
