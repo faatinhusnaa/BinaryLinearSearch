@@ -204,6 +204,25 @@ void __fastcall TForm2::SearchButtonClick(TObject *Sender)
 		ResultBox->Lines->Add("-> Both used the same number of steps.");
 
 	ResultBox->Lines->Add("Note: Fewer steps doesn't always mean faster speed.");
+	ResultBox->Lines->Add("");
+	
+	// Time and Space Complexity
+	ResultBox->Lines->Add("Time & Space Complexity:");
+	ResultBox->Lines->Add("--------------------------");
+	
+	ResultBox->Lines->Add("Linear Search:");
+	ResultBox->Lines->Add(" - Best Case    : O(1)");
+	ResultBox->Lines->Add(" - Worst Case   : O(n)");
+	ResultBox->Lines->Add(" - Average Case : O(n)");
+	ResultBox->Lines->Add(" - Space        : O(1)");
+	
+	ResultBox->Lines->Add("");
+	ResultBox->Lines->Add("Binary Search (on sorted copy):");
+	ResultBox->Lines->Add(" - Best Case    : O(1)");
+	ResultBox->Lines->Add(" - Worst Case   : O(log n)");
+	ResultBox->Lines->Add(" - Average Case : O(log n)");
+	ResultBox->Lines->Add(" - Space        : O(n) (due to copy + sort)");
+
 
 	//---------------------------------------------------------------
 
