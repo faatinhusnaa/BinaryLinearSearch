@@ -29,7 +29,7 @@ This is a C++ Builder FMX application created in Embarcadero RAD Studio to **vis
 
 ## 📸 UI Preview
 
-![image](https://github.com/user-attachments/assets/93a4662c-4614-4fc7-808c-7685246baa3b)
+<img width="855" height="998" alt="image" src="https://github.com/user-attachments/assets/6ba1d52e-231b-4aac-a0ad-e2f5baef79db" />
 
 
 ## 🚀 How to Run
