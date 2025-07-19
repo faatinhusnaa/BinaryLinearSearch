@@ -1,4 +1,4 @@
-﻿#include <fmx.h>
+#include <fmx.h>
 #pragma hdrstop
 
 #include "Unit2.h"
@@ -8,8 +8,7 @@
 #include <Fmx.Layouts.hpp>
 #include <System.UITypes.hpp>
 #include <FMX.Controls.hpp>
-#include<cmath>
-
+#include <cmath>
 
 #pragma package(smart_init)
 #pragma resource "*.fmx"
@@ -63,6 +62,7 @@ void __fastcall TForm2::DataBoxItemClick(TCustomListBox * const Sender, TListBox
 // Perform both linear and binary search and visualize results
 void __fastcall TForm2::SearchButtonClick(TObject *Sender)
 {
+
 	String keyword = Search->Text.Trim();
 	if (keyword.IsEmpty()) {
 		ShowMessage("Please enter a value to search.");
@@ -207,23 +207,25 @@ void __fastcall TForm2::SearchButtonClick(TObject *Sender)
 
 	ResultBox->Lines->Add("Note: Fewer steps doesn't always mean faster speed.");
 	ResultBox->Lines->Add("");
-	
+
 	// Time and Space Complexity
 	ResultBox->Lines->Add("Time & Space Complexity:");
 	ResultBox->Lines->Add("--------------------------");
-	
+
 	ResultBox->Lines->Add("Linear Search:");
 	ResultBox->Lines->Add(" - Best Case    : O(1)");
 	ResultBox->Lines->Add(" - Worst Case   : O(n)");
 	ResultBox->Lines->Add(" - Average Case : O(n)");
 	ResultBox->Lines->Add(" - Space        : O(1)");
-	
+
 	ResultBox->Lines->Add("");
+
 	ResultBox->Lines->Add("Binary Search (on sorted copy):");
 	ResultBox->Lines->Add(" - Best Case    : O(1)");
 	ResultBox->Lines->Add(" - Worst Case   : O(log n)");
 	ResultBox->Lines->Add(" - Average Case : O(log n)");
 	ResultBox->Lines->Add(" - Space        : O(n) (due to copy + sort)");
+
 //---------------------------------------------------------------
 	ResultBox->Lines->Add("Estimated Theoretical Complexity:");
 	ResultBox->Lines->Add("--------------------------");
@@ -249,8 +251,6 @@ ResultBox->Lines->Add(" - Time Complexity: O(log n) ≈ O(" +
 	FloatToStrF(log2(n), ffFixed, 4, 1) + ")");
 ResultBox->Lines->Add(" - Steps Taken: " + IntToStr(binaryStepCount));
 ResultBox->Lines->Add(" - Space Complexity: O(1)");
-
-
 
 //---------------------------------------------------------------
 
@@ -365,4 +365,3 @@ void __fastcall TForm2::ShowSearchBoxes(TScrollBox* scrollBox, const std::vector
 }
 
 //---------------------------------------------------------------
-
